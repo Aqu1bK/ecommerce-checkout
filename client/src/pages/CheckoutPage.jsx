@@ -50,25 +50,29 @@ const CheckoutPage = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!validateForm()) return;
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  if (!validateForm()) return;
 
-    try {
-      const response = await axios.post('https://ecommerce-backend-7n2h.onrender.com', {
+  try {
+    const response = await axios.post(
+      'https://ecommerce-backend-7n2h.onrender.com/api/orders',
+      {
         ...formData,
         product: cart
-      });
-      
-      if (response.data.status === 'approved') {
-        navigate('/thank-you', { state: { order: response.data.order }});
-      } else {
-        alert(`Payment failed: ${response.data.message}`);
       }
-    } catch (error) {
-      alert('An error occurred during checkout');
+    );
+    
+    if (response.data.status === 'approved') {
+      navigate('/thank-you', { state: { order: response.data.order }});
+    } else {
+      alert(`Payment failed: ${response.data.message}`);
     }
-  };
+  } catch (error) {
+    console.error('Checkout error:', error);
+    alert('An error occurred during checkout');
+  }
+};
 
   if (!cart) return <div>Loading...</div>;
 
