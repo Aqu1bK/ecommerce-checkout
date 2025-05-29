@@ -4,6 +4,11 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const { Pool } = require('pg');
 const nodemailer = require('nodemailer');
+const express = require('express');
+const cors = require('cors');
+
+const app = express();
+app.use(cors()); 
 
 const app = express();
 app.use(cors());
