@@ -22,7 +22,7 @@ A **full-stack checkout system** with:
 | Frontend | Backend | Database | Hosting |
 |----------|---------|----------|---------|
 | React    | Node.js | PostgreSQL | Render.com |
-| Vite     | Express |           |         |
+| Vite     | Express | pgAdmin    |            |
 
 ---
 
