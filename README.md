@@ -29,5 +29,5 @@ A **full-stack checkout system** with:
 ## **Local Setup**
 1. **Clone repo**
    ```bash
-   git clone https://github.com/yourusername/ecommerce-checkout.git
+   git clone https://github.com/Aqu1bK/ecommerce-checkout.git
    cd ecommerce-checkout
