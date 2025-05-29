@@ -55,7 +55,7 @@ const CheckoutPage = () => {
     if (!validateForm()) return;
 
     try {
-      const response = await axios.post('http://localhost:5000/api/orders', {
+      const response = await axios.post('https://ecommerce-backend-7n2h.onrender.com', {
         ...formData,
         product: cart
       });
